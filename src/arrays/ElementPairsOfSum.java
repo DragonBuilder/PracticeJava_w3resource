@@ -112,11 +112,11 @@ public class ElementPairsOfSum {
 		 * 
 		 * For every element in the array, 
 		 * check if that element is present in a hashset(why? 'contains()' is a constant time operation),
-		 * if No:
-		 * 		Subtract this number from the sum and add it to the hashset
-		 * 
 		 * if Yes: 
 		 * 		Then the current number and subtraction of current number from sum will form a pair!
+		 * 
+		 * Subtract this number from the sum and add it to the hashset
+		 * 
 		 */
 		List<int[]> pairsOfSum = new ArrayList<>();
 		
