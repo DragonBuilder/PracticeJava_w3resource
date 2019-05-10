@@ -78,9 +78,13 @@ public class ElementPairsOfSum {
 		
 		List<int[]> pairsOfSum = new ArrayList<>();
 		
+		// two pointers, one starts at the begining, the other at the ned of the array
 		int i=0, j=arrOfNums.length - 1;
+		
+		
 		while ( j > i) {
 			int currentSum = arrOfNums[i] + arrOfNums[j];
+			
 			if (currentSum == sum) {
 				pairsOfSum.add(new int[] {arrOfNums[i], arrOfNums[j]});
 				i++;
@@ -104,7 +108,16 @@ public class ElementPairsOfSum {
 	 * <p>Complexity O(n)</p>
 	 */
 	public static List<int[]> pairsOfSumForUnsorted(int[] arrOfNums, int sum){
-		
+		/* ALGORITHM:
+		 * 
+		 * For every element in the array, 
+		 * check if that element is present in a hashset(why? 'contains()' is a constant time operation),
+		 * if No:
+		 * 		Subtract this number from the sum and add it to the hashset
+		 * 
+		 * if Yes: 
+		 * 		Then the current number and subtraction of current number from sum will form a pair!
+		 */
 		List<int[]> pairsOfSum = new ArrayList<>();
 		
 		Set<Integer> diffs = new HashSet<>();
